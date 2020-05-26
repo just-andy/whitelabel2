@@ -21,10 +21,10 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main>
+        <main className="container mx-auto">
           {children}
         </main>
-        <Footer />
+        <Footer siteTitle={data.site.siteMetadata.title} />
       </>
     )}
   />
