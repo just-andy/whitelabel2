@@ -25,6 +25,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-theme-tailwindcss`,
+      options: {
+        postCssPlugins: [require("autoprefixer")],
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
