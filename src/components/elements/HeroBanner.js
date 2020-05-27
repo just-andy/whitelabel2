@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from 'gatsby-background-image-es5'
 
 
@@ -14,28 +14,31 @@ const HeroBanner = props => {
       return edge.node.name === imageName
     })
 
- 
+
 
     return imagePath.node.childImageSharp.fluid
   }
 
 
-    return (
-        <BackgroundImage
-          Tag="section"
-          fluid={getImagePath(banners, props.filename)}
-          backgroundColor={`#040e18`}
-          className="w-full h-56 lg:h-80"
-        >
-          
-          <div className="flex items-center justify-center h-56 lg:h-80">
-            <div className="text-center w-3/4 lg:w-6/12 ">
-              <h2 className="text-2xl text-white mb-2 md:text-3xl lg:text-4xl lg:mb-8">{props.title}</h2>
-              <Link to={props.link} className="btn btn-primary lg:text-2xl ">{props.label}</Link>
-            </div> 
-          </div>
-        </BackgroundImage>
-    )
+  return (
+
+    <BackgroundImage
+      Tag="section"
+      fluid={getImagePath(banners, props.filename)}
+      backgroundColor={`#040e18`}
+      className="w-full h-56 lg:h-80"
+    >
+
+      <div className="flex items-center justify-center h-56 lg:h-80">
+        <div className="text-center w-3/4 lg:w-6/12 ">
+          <h2 className="text-2xl text-white mb-2 md:text-3xl lg:text-4xl lg:mb-8">{props.title}</h2>
+          <Link to={props.link} className="btn btn-primary lg:text-2xl ">{props.label}</Link>
+        </div>
+      </div>
+    </BackgroundImage>
+
+  )
+
 }
 
 export default HeroBanner

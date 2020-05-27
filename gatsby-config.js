@@ -3,8 +3,7 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'Just Andy Whitelabel',
-    description:
-      'Whitelabel site description.',
+    description: 'Whitelabel site description.',
     author: '@just-andy',
   },
   plugins: [

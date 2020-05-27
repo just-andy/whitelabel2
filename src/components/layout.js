@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-
+import { MDXProvider } from '@mdx-js/react'
+import Testimonial from '../components/modules/Testimonial'
 import "../utils/global.css"
-
 import Header from './Header'
 import Footer from './Footer'
+
+const shortcodes = { Testimonial }
+
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -21,8 +24,9 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main className="container mx-auto">
-          {children}
+
+        <main>
+          <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
         <Footer siteTitle={data.site.siteMetadata.title} />
       </>

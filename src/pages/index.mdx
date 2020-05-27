@@ -1,15 +1,13 @@
----
-title: 'Frontmatter Site Title'
-description: 'This is the index description'
-heroImage: '../images/hero-banners/salon.jpg'
----
-
 import { Link } from 'gatsby'
-
 import Layout from '../components/Layout'
+import Hero from "../components/elements/HeroBanner"
+
 import SEO from '../components/Seo'
 
 <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
+
+<Hero alt="group in hair salon" filename="salon" title="Book an appointment with one team today" label="Book Now" link="/contact"/>
+
 
 # Hi people
 
@@ -17,9 +15,11 @@ Welcome to your new Gatsby site.
 
 Now go build something great.
 
+
+<Testimonial quote="This is a quote" cite="Andy" />
+
 ## remark
 
 ![new remark image](../images/gatsby-astronaut.png)
 
 <Link to="/page-2/">Go to page 2</Link>
-
