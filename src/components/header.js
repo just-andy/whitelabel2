@@ -1,35 +1,43 @@
-import { Link } from 'gatsby'
+import React, { useState } from "react"
+import { Link } from "gatsby"
 import PropTypes from 'prop-types'
-import React from 'react'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
+import Navigation from "./elements/Navigation"
+
+const Header = ({ siteTitle }) => {
+
+  const [isOpen, setNav] = useState(false)
+
+  const toggleNav = () => {
+    setNav(isOpen => !isOpen)
+  }
+
+  return (
+    <div className="container mx-auto py-4">
+      <div className="md:flex md:justify-between">
+        <div className="flex justify-between">
+          <Link to="/">
+            <span className="text-3xl font-bold md:py-4">{siteTitle}</span>
+          </Link>
+          <button
+            type="button"
+            className="btn btn-primary my-1 md:hidden"
+            onClick={toggleNav}
+          >
+            Menu
+          </button>
+        </div>
+
+        <div
+          className={isOpen ? `block md:block` : `hidden md:block`}
         >
-          {siteTitle}
-        </Link>
-      </h1>
+          <Navigation />
+        </div>
+      </div>
     </div>
-  </div>
-)
+  )
+
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

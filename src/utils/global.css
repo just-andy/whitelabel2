@@ -1,9 +1,151 @@
 @tailwind base;
 
-body {
-    @apply text-blue-500;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-2;
+  @apply mt-3;
+}
+
+h1 {
+  @apply text-4xl;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+a {
+  @apply text-primary-500;
+}
+
+a:hover {
+  @apply text-secondary-900;
+}
+
+.active {
+  @apply text-accent-500;
+}
+
+ol li {
+  @apply pl-1;
+  @apply pb-1;
+}
+
+p {
+  @apply mb-4;
+}
+
+.lead {
+  @apply text-xl;
+}
+
+.container {
+  @apply px-4;
+  @apply w-8/12;
+}
+
+@screen lg {
+  .container {
+    @apply px-2;
+  }
 }
 
 @tailwind components;
 
+/** Buttons **/
+.btn {
+  @apply inline-block py-3 px-6 mt-4 rounded shadow leading-none;
+}
+
+@screen lg {
+  .btn {
+    @apply mt-0;
+  }
+}
+
+/** Navigation **/
+.navLinks {
+  height: 0;
+  overflow: hidden;
+}
+
+@screen lg {
+  .navLinks {
+    height: auto;
+  }
+}
+
+.showNav {
+  height: 220px;
+}
+
+/** Show **/
+
+.btn-hollow {
+  background: none;
+  @apply text-primary-500 border-solid border-2 border-primary-500 shadow-none;
+}
+
+.btn-hollow:hover {
+  @apply bg-secondary-900 text-white border-primary-900;
+}
+
+.btn-primary {
+  @apply bg-primary-500 text-white;
+}
+
+.btn-primary:hover {
+  @apply bg-secondary-900 text-white;
+}
+
+.btn-secondary {
+  @apply bg-secondary-500 text-white;
+}
+
+.btn-secondary:hover {
+  @apply bg-secondary-900 text-white;
+}
+
+.btn-primary-active {
+  @apply bg-accent-500 text-white;
+}
+
+
+
+.thumbnail {
+  @apply p-1 border-solid border-2 border-gray-200;
+}
+
+/** Utilities **/
+
+.section-spacer {
+  @apply py-10;
+}
+
+
+/** Forms **/
+
+.field-wrapper{
+ @apply mb-4;
+}
+
+label {
+  @apply block text-sm font-bold mb-2;
+}
+
+input, textarea {
+  @apply appearance-none border rounded w-full py-2 px-3 leading-tight;
+}
+
+input["focus"], textarea["focus"]{
+  @apply outline-none shadow-outline;
+}
+
 @tailwind utilities;
+
+
